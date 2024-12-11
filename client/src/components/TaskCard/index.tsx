@@ -106,14 +106,18 @@ const TaskCard = ({ task }: Props) => {
       <TaskField
         label="Status"
         value={
-          <span
-            style={{
-              backgroundColor: statusColor[task.status!],
-            }}
-            className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-white"
-          >
-            {task.status}
-          </span>
+          task.status ? (
+            <span
+              style={{
+                backgroundColor: statusColor[task.status],
+              }}
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-white"
+            >
+              {task.status}
+            </span>
+          ) : (
+            "Unknown Status"
+          )
         }
       />
 
