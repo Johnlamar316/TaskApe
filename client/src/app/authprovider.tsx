@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { ReactNode } from "react";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
@@ -42,7 +42,11 @@ const formFields = {
   },
 };
 
-const AuthProvider = ({ children }: PropsWithChildren<{}>) => {
+type Props = {
+  children?: ReactNode;
+};
+
+const AuthProvider = ({ children }: Props) => {
   return (
     <div
       className="flex min-h-screen items-center justify-center bg-gray-100"
