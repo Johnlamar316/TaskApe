@@ -11,7 +11,7 @@ const UserCard = ({ user }: Props) => {
     <div className="mb-6 w-full max-w-md cursor-grab overflow-hidden rounded-lg bg-white p-6 shadow-lg dark:bg-dark-secondary">
       {user.profilePictureUrl && (
         <Image
-          src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/p1.jpeg`}
+          src={`https://taskape-s3-images.s3.eu-west-2.amazonaws.com/p1.jpeg`}
           alt="profile picture"
           width={32}
           height={32}

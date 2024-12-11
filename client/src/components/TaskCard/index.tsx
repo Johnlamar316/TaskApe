@@ -84,7 +84,7 @@ const TaskCard = ({ task }: Props) => {
           </strong>
           <div className="mt-2 flex flex-wrap gap-2">
             <Image
-              src={`/${task.attachments[0].fileURL}`}
+              src={`https://taskape-s3-images.s3.eu-west-2.amazonaws.com/${task.attachments[0].fileURL}`}
               alt={task.attachments[0].fileName}
               width={400}
               height={200}
