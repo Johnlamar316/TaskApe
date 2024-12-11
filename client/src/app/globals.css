@@ -59,6 +59,23 @@ body,
   @apply dark:text-neutral-500;
 }
 
+.amplify-button--primary {
+  background-color: black !important;
+  color: white !important;
+}
+
+.amplify-button--primary:hover {
+  background-color: #333 !important;
+}
+
+.amplify-button--primary:active {
+  background-color: #111 !important;
+}
+
+.amplify-tabs__item:hover {
+  color: #000 !important;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;

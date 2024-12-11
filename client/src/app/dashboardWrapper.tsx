@@ -3,7 +3,14 @@ import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import StoreProvider, { useAppSelector } from "./redux";
-import { ToastContainer } from "react-toastify";
+import AuthProvider from "./authprovider";
+import {
+  Authenticator,
+  ThemeProvider,
+  Theme,
+  useTheme,
+  View,
+} from "@aws-amplify/ui-react";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const isSidebarCollapsed = useAppSelector(
@@ -35,20 +42,53 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 };
 
 const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
+  const { tokens } = useTheme();
+  const theme: Theme = {
+    name: "Auth Example Theme",
+    tokens: {
+      components: {
+        authenticator: {
+          router: {
+            boxShadow: `0 0 16px ${tokens.colors.overlay["10"]}`,
+            borderWidth: "0",
+          },
+          form: {
+            padding: `${tokens.space.medium} ${tokens.space.xl} ${tokens.space.medium}`,
+          },
+        },
+        button: {
+          primary: {
+            backgroundColor: tokens.colors.neutral["100"],
+          },
+          link: {
+            color: tokens.colors.neutral["100"],
+          },
+        },
+        fieldcontrol: {
+          _focus: {
+            boxShadow: `0 0 0 2px ${tokens.colors.purple["60"]}`,
+          },
+        },
+        tabs: {
+          item: {
+            color: tokens.colors.neutral["80"],
+            _active: {
+              borderColor: tokens.colors.neutral["100"],
+              color: tokens.colors.neutral["100"],
+            },
+          },
+        },
+      },
+    },
+  };
+
   return (
     <StoreProvider>
-      <DashboardLayout>{children}</DashboardLayout>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ThemeProvider theme={theme}>
+        <AuthProvider>
+          <DashboardLayout>{children}</DashboardLayout>{" "}
+        </AuthProvider>
+      </ThemeProvider>
     </StoreProvider>
   );
 };

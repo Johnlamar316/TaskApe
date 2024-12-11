@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -14,6 +14,7 @@ import teamRoutes from "./routes/teamRoutes";
 /* CONFIGURATIONS */
 dotenv.config();
 const app = express();
+
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));

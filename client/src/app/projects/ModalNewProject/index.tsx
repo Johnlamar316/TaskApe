@@ -3,8 +3,6 @@ import { useCreateProjectMutation } from "@/state/api";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { formatISO } from "date-fns";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useAppSelector } from "@/app/redux";
 
 type Props = {
@@ -45,12 +43,6 @@ const ModalNewProject = ({
 
     if (result?.id) {
       setIsModalNewProjectOpen(false);
-      toast.success("Project created successfully!", {
-        style: {
-          backgroundColor: isDarkMode ? "black" : "white",
-          color: isDarkMode ? "white" : "black",
-        },
-      });
       router.push(`/projects/${result.id}`);
     }
   };

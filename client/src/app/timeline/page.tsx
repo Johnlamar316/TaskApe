@@ -6,7 +6,6 @@ import { DisplayOption, Gantt, ViewMode } from "gantt-task-react";
 import "gantt-task-react/dist/index.css";
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
 import HeaderContainer from "@/components/HeaderContainer";
 
 type TaskTypeItems = "task" | "milestone" | "project";
@@ -46,12 +45,7 @@ const Timeline = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (isError || !projects)
-    toast.error("An error occurred while fetching projects<", {
-      style: {
-        backgroundColor: isDarkMode ? "black" : "white",
-        color: isDarkMode ? "white" : "black",
-      },
-    });
+    return <div>An error occurred while fetching projects</div>;
 
   return (
     <div className="max-w-full p-8">

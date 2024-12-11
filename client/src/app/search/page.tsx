@@ -4,7 +4,6 @@ import TaskCard from "@/components/TaskCard";
 import { useSearchQuery } from "@/state/api";
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { useAppSelector } from "../redux";
 import ProjectCard from "@/components/ProjectCard";
 import UserCard from "@/components/UserCard/UserCard";
@@ -47,13 +46,7 @@ const Search = () => {
       </div>
       <div className="p-5">
         {isLoading && <p>Loading...</p>}
-        {isError &&
-          toast.error("An error occurred while fetching search result", {
-            style: {
-              backgroundColor: isDarkMode ? "black" : "white",
-              color: isDarkMode ? "white" : "black",
-            },
-          })}
+        {isError && <div>An error occurred while fetching search result</div>}
         {!isLoading && !isError && searchResults && (
           <div>
             {searchResults.tasks && searchResults.tasks?.length > 0 && (
