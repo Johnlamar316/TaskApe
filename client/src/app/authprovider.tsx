@@ -54,11 +54,7 @@ const AuthProvider = ({ children }: PropsWithChildren<{}>) => {
         backgroundAttachment: "fixed",
       }}
     >
-      <Authenticator
-        formFields={formFields}
-        components={components}
-        className="shadow-lg"
-      >
+      <Authenticator formFields={formFields} className="shadow-lg">
         {({ user }) =>
           user ? (
             <div>{children}</div>
