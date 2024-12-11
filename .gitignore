@@ -5,4 +5,16 @@ client/dist/
 server/dist/
 client/.env
 server/.env
+client/.next/
+client/out/
+client/.env.local
+client/.env.*local
 client/.next/client/public/*.jpeg
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+client/.vercel/
+client/.swc/
+client/dist/
+
