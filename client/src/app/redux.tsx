@@ -29,13 +29,16 @@ import { loggerMiddleware } from "@/state/middleware";
 /* REDUX PERSISTENCE */
 const createNoopStorage = () => {
   return {
-    getItem(_key: any) {
+    getItem(_key: string) {
+      console.log(_key);
       return Promise.resolve(null);
     },
-    setItem(_key: any, value: any) {
+    setItem(_key: string, value: string) {
+      console.log(_key);
       return Promise.resolve(value);
     },
-    removeItem(_key: any) {
+    removeItem(_key: string) {
+      console.log(_key);
       return Promise.resolve();
     },
   };

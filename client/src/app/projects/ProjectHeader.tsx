@@ -11,7 +11,7 @@ import {
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import ModalNewProject from "./ModalNewProject";
-import { Status, useGetProjectsQuery } from "@/state/api";
+import { useGetProjectsQuery } from "@/state/api";
 import { useRouter } from "next/navigation";
 
 type Props = {

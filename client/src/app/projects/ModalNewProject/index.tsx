@@ -1,5 +1,5 @@
 import Modal from "@/components/Modal";
-import { useCreateProjectMutation, useGetProjectsQuery } from "@/state/api";
+import { useCreateProjectMutation } from "@/state/api";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { formatISO } from "date-fns";

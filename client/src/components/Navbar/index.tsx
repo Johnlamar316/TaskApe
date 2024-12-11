@@ -1,13 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { Menu, Moon, Search, Settings, Sun } from 'lucide-react'
+import { Menu, Moon, Search, Settings, Sun } from "lucide-react";
 import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
-  const dispatch = useAppDispatch()
+const Navbar = () => {
+  const dispatch = useAppDispatch();
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed,
   );
@@ -58,8 +56,7 @@ const Navbar = (props: Props) => {
         </Link>
         <div className="ml-2 mr-5 hidden min-h-[2em] w-[0.1rem] bg-gray-200 md:inline-block"></div>
         <div className="hidden items-center justify-between md:flex">
-          <div className="align-center flex h-9 w-9 justify-center">
-          </div>
+          <div className="align-center flex h-9 w-9 justify-center"></div>
         </div>
       </div>
     </div>
