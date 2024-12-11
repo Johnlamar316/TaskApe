@@ -3,7 +3,6 @@ import { useCreateProjectMutation } from "@/state/api";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { formatISO } from "date-fns";
-import { useAppSelector } from "@/app/redux";
 
 type Props = {
   isOpen: boolean;
@@ -18,7 +17,6 @@ const ModalNewProject = ({
 }: Props) => {
   const router = useRouter();
   const [createProject, { isLoading }] = useCreateProjectMutation();
-  const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
   const [projectName, setProjectName] = useState("");
   const [description, setDescription] = useState("");
   const [startDate, setStartDate] = useState("");

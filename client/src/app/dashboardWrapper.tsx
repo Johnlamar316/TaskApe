@@ -4,13 +4,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import StoreProvider, { useAppSelector } from "./redux";
 import AuthProvider from "./authprovider";
-import {
-  Authenticator,
-  ThemeProvider,
-  Theme,
-  useTheme,
-  View,
-} from "@aws-amplify/ui-react";
+import { ThemeProvider, Theme, useTheme } from "@aws-amplify/ui-react";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const isSidebarCollapsed = useAppSelector(

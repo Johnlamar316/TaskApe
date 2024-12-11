@@ -1,10 +1,5 @@
-import React from "react";
-import {
-  Authenticator,
-  Button,
-  useAuthenticator,
-  View,
-} from "@aws-amplify/ui-react";
+import React, { PropsWithChildren } from "react";
+import { Authenticator } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 
@@ -49,7 +44,7 @@ const formFields = {
   },
 };
 
-const AuthProvider = ({ children }: any) => {
+const AuthProvider = ({ children }: PropsWithChildren<{}>) => {
   return (
     <div
       className="flex min-h-screen items-center justify-center bg-gray-100"

@@ -1,7 +1,7 @@
 import { Task } from "@/state/api";
 import { format } from "date-fns";
 import Image from "next/image";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 
 type Props = {
   task: Task;
@@ -41,15 +41,18 @@ const TaskCard = ({ task }: Props) => {
     e.preventDefault();
   };
 
-  const onResize = (e: MouseEvent) => {
-    if (isResizing && cardRef.current) {
-      const deltaY = e.clientY - cardRef.current.getBoundingClientRect().top;
-      const deltaX = e.clientX - cardRef.current.getBoundingClientRect().left;
+  const onResize = useCallback(
+    (e: MouseEvent) => {
+      if (isResizing && cardRef.current) {
+        const deltaY = e.clientY - cardRef.current.getBoundingClientRect().top;
+        const deltaX = e.clientX - cardRef.current.getBoundingClientRect().left;
 
-      setHeight(Math.max(deltaY, 200));
-      setWidth(Math.max(deltaX, 200));
-    }
-  };
+        setHeight(Math.max(deltaY, 200));
+        setWidth(Math.max(deltaX, 200));
+      }
+    },
+    [isResizing],
+  );
 
   const stopResize = () => {
     setIsResizing(false);

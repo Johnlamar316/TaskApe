@@ -4,7 +4,6 @@ import TaskCard from "@/components/TaskCard";
 import { useSearchQuery } from "@/state/api";
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
-import { useAppSelector } from "../redux";
 import ProjectCard from "@/components/ProjectCard";
 import UserCard from "@/components/UserCard/UserCard";
 import HeaderContainer from "@/components/HeaderContainer";
@@ -13,7 +12,6 @@ import { useRouter } from "next/navigation";
 const Search = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
-  const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
   const {
     data: searchResults,
     isLoading,
