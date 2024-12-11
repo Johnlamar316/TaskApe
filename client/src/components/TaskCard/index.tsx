@@ -1,7 +1,7 @@
 import { Task } from "@/state/api";
 import { format } from "date-fns";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 type Props = {
   task: Task;
@@ -55,7 +55,7 @@ const TaskCard = ({ task }: Props) => {
     setIsResizing(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isResizing) {
       document.addEventListener("mousemove", onResize);
       document.addEventListener("mouseup", stopResize);
@@ -67,7 +67,7 @@ const TaskCard = ({ task }: Props) => {
       document.removeEventListener("mousemove", onResize);
       document.removeEventListener("mouseup", stopResize);
     };
-  }, [isResizing]);
+  }, [isResizing, onResize]);
 
   return (
     <div

@@ -84,7 +84,9 @@ const ModalNewTask = ({
     setDueDate("");
     setAuthorUserId("");
     setAssignedUserId("");
-    setIsModalNewTaskOpen && setIsModalNewTaskOpen(false);
+    if (setIsModalNewTaskOpen) {
+      setIsModalNewTaskOpen(false);
+    }
   };
 
   const isFormValid = () => {
