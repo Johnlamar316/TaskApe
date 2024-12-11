@@ -13,8 +13,6 @@ Amplify.configure({
   },
 });
 
-const components = {};
-
 const formFields = {
   signUp: {
     username: {
