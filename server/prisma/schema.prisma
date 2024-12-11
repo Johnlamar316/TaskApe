@@ -19,7 +19,7 @@ model User {
   cognitoId         String  @unique
   username          String  @unique
   profilePictureUrl String?
-  teamId            Int? 
+  teamId            Int?
 
   authoredTasks   Task[]           @relation("TaskAuthor")
   assignedTasks   Task[]           @relation("TaskAssignee")
