@@ -56,7 +56,7 @@ type Props = {
 const AuthProvider = ({ children }: Props) => {
   return (
     <div
-      className="flex min-h-screen items-center justify-center bg-gray-100"
+      // className={`flex min-h-screen items-center justify-center bg-gray-100`}
       style={{
         backgroundImage: "url('/beast.png')",
         backgroundPosition: "center",
