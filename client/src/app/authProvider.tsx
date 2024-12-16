@@ -17,26 +17,31 @@ Amplify.configure({
 
 const formFields = {
   signUp: {
-    username: {
+    name: {
       order: 1,
+      placeholder: "Enter your full name",
+      label: "Full Name",
+    },
+    username: {
+      order: 2,
       placeholder: "Choose a username",
       label: "Username",
       inputprops: { required: true },
     },
     email: {
-      order: 1,
+      order: 3,
       placeholder: "Enter your email address",
       label: "Email",
       inputprops: { type: "email", required: true },
     },
     password: {
-      order: 3,
+      order: 4,
       placeholder: "Enter your password",
       label: "Password",
       inputprops: { type: "password", required: true },
     },
     confirm_password: {
-      order: 4,
+      order: 5,
       placeholder: "Confirm your password",
       label: "Confirm Password",
       inputprops: { type: "password", required: true },

@@ -28,11 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <DashboardWrapper>{children}</DashboardWrapper>
-      </body>
+      <AuthProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <DashboardWrapper>{children}</DashboardWrapper>
+        </body>
+      </AuthProvider>
     </html>
   );
 }
