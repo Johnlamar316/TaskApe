@@ -55,16 +55,28 @@ type Props = {
 
 const AuthProvider = ({ children }: Props) => {
   return (
-    <div
-      // className={`flex min-h-screen items-center justify-center bg-gray-100`}
-      style={{
-        backgroundImage: "url('/beast.png')",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <>
+      <style>
+        {`
+    [data-amplify-authenticator] {
+    --amplify-components-authenticator-form-height: 5000px;
+    --amplify-components-authenticator-form-padding: var(--amplify-space-medium);
+    
+    background-image: url('/beast.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Fallback if a specific height variable is not available */
+    height: var(--amplify-components-authenticator-form-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+    }
+    `}
+      </style>
       <Authenticator formFields={formFields} className="shadow-lg">
         {({ user }) =>
           user ? (
@@ -76,7 +88,7 @@ const AuthProvider = ({ children }: Props) => {
           )
         }
       </Authenticator>
-    </div>
+    </>
   );
 };
 

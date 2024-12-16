@@ -76,6 +76,21 @@ body,
   color: #000 !important;
 }
 
+.amplify-tabs__item--active {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+.amplify-tabs__item--active::before {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+.amplify-tabs__item--active::after {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
